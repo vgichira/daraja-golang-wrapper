@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(configurations.BaseEndpoint(configurations.Enviroment))
+	fmt.Println(configurations.SimulateC2B("CustomerBuyGoodsOnline", "254708374149", "vgichira", 10000))
 }
