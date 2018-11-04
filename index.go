@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(configurations.SimulateC2B("CustomerBuyGoodsOnline", "254708374149", "vgichira", 10000))
+	fmt.Println(configurations.MobileCheckout("SANDBOX", "254725089232", "vgichira", "This is a test", 100))
 }

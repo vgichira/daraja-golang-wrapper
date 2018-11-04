@@ -8,6 +8,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"time"
 )
 
 // function to return the base path for endpoints
@@ -138,6 +139,71 @@ func SimulateC2B(command, phoneNumber, accountNo string, amount int) string {
 		PhoneNumber: phoneNumber,
 		Amount:      amount,
 		AccountNo:   accountNo,
+	}
+
+	jsonData, err := json.Marshal(postData)
+
+	if err != nil {
+		fmt.Println("error:", err)
+	}
+
+	request, err := http.NewRequest("POST", endPoint, bytes.NewBuffer(jsonData))
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	request.Header.Add("Content-Type", "application/json")
+	request.Header.Add("Authorization", "Bearer "+generateToken(enviroment))
+
+	response, err := http.DefaultClient.Do(request)
+
+	if err != nil {
+		panic(err)
+	}
+
+	body, err := ioutil.ReadAll(response.Body)
+
+	if err != nil {
+		panic(err)
+	}
+
+	defer response.Body.Close()
+
+	return string(body)
+}
+
+// Mobile checkout API
+
+func MobileCheckout(env, phoneNumber, accountNo, description string, amount int) string {
+	var endPoint, shortCode, password string
+
+	t := time.Now()
+	timestamp := t.Format("20060102150405")
+
+	if env == "SANDBOX" {
+		endPoint = endpoints["SANDBOX_ENDPOINTS"]["CHECKOUT"]
+		shortCode = daraja["SANDBOX_CONFIGS"]["LIPA_NA_MPESA_SHORTCODE"]
+	} else if env == "LIVE" {
+		endPoint = endpoints["LIVE_ENDPOINTS"]["CHECKOUT"]
+		shortCode = daraja["LIVE_CONFIGS"]["LIPA_NA_MPESA_SHORTCODE"]
+	}
+
+	encodeData := shortCode + daraja["SANDBOX_CONFIGS"]["LIPA_NA_MPESA_PASSKEY"] + timestamp
+	password = b64.StdEncoding.EncodeToString([]byte(encodeData))
+
+	postData := MobileCheckoutRequest{
+		BusinessShortCode: shortCode,
+		Password:          password,
+		Timestamp:         timestamp,
+		TransactionType:   "CustomerPayBillOnline",
+		Amount:            100,
+		PartyA:            phoneNumber,
+		PartyB:            shortCode,
+		PhoneNumber:       phoneNumber,
+		CallBackURL:       callbacks["MOBILE_CHECKOUT_URL"],
+		AccountReference:  accountNo,
+		TransactionDesc:   description,
 	}
 
 	jsonData, err := json.Marshal(postData)
