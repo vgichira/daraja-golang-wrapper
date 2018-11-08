@@ -11,8 +11,8 @@ var daraja = map[string]map[string]string{
 	"SANDBOX_CONFIGS": {
 		"APP_CONSUMER_KEY":        "pyhfLWi17bMPs3gchEnEAY2wb6S9Wj9n",
 		"APP_SECRET_KEY":          "VCORc4rrhPGP3SRj",
-		"C2B_SHORTCODE":           "603034", // this is the shortcode to be used for c2b transactions
-		"B2B_B2C_SHORTCODE":       "600000", // this is the shortcode to be used for b2b and b2c transactions
+		"B2B_B2C_SHORTCODE":       "603034", // this is the shortcode to be used for c2b transactions
+		"C2B_SHORTCODE":           "600000", // this is the shortcode to be used for b2b and b2c transactions
 		"INITIATOR_NAME":          "apiop31",
 		"TEST_MSISDN":             "254708374149",
 		"SECURITY_CREDENTIAL":     "4bfTPxTk",

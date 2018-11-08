@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(configurations.MobileCheckout("SANDBOX", "254725089232", "vgichira", "This is a test", 100))
+	fmt.Println(configurations.B2BRequest("SANDBOX", "BusinessPayBill", "600000", "test", "This is a test", 4, 4, 100))
 }

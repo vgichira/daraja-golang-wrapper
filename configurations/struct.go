@@ -28,3 +28,31 @@ type MobileCheckoutRequest struct {
 	AccountReference  string
 	TransactionDesc   string
 }
+
+type B2CRequestStruct struct {
+	InitiatorName      string
+	SecurityCredential string
+	CommandID          string
+	Amount             int
+	PartyA             string
+	PartyB             string
+	Remarks            string
+	QueueTimeOutURL    string
+	ResultURL          string
+	Occasion           string
+}
+
+type B2BRequestStruct struct {
+	Initiator              string
+	SecurityCredential     string
+	CommandID              string
+	SenderIdentifierType   int
+	RecieverIdentifierType int
+	Amount                 int
+	PartyA                 string
+	PartyB                 string
+	AccountReference       string
+	Remarks                string
+	QueueTimeOutURL        string
+	ResultURL              string
+}
