@@ -9,15 +9,15 @@ var enviroment = "SANDBOX"
 
 var daraja = map[string]map[string]string{
 	"SANDBOX_CONFIGS": {
-		"APP_CONSUMER_KEY":        "pyhfLWi17bMPs3gchEnEAY2wb6S9Wj9n",
-		"APP_SECRET_KEY":          "VCORc4rrhPGP3SRj",
-		"B2B_B2C_SHORTCODE":       "603034", // this is the shortcode to be used for c2b transactions
-		"C2B_SHORTCODE":           "600000", // this is the shortcode to be used for b2b and b2c transactions
-		"INITIATOR_NAME":          "apiop31",
-		"TEST_MSISDN":             "254708374149",
-		"SECURITY_CREDENTIAL":     "4bfTPxTk",
-		"LIPA_NA_MPESA_SHORTCODE": "174379",
-		"LIPA_NA_MPESA_PASSKEY":   "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919",
+		"APP_CONSUMER_KEY":        "",
+		"APP_SECRET_KEY":          "",
+		"B2B_B2C_SHORTCODE":       "", // this is the shortcode to be used for c2b transactions
+		"C2B_SHORTCODE":           "", // this is the shortcode to be used for b2b and b2c transactions
+		"INITIATOR_NAME":          "",
+		"TEST_MSISDN":             "",
+		"SECURITY_CREDENTIAL":     "",
+		"LIPA_NA_MPESA_SHORTCODE": "",
+		"LIPA_NA_MPESA_PASSKEY":   "",
 		"CERT_LOCATION":           "",
 	},
 
@@ -61,17 +61,17 @@ var endpoints = map[string]map[string]string{
 // daraja callback urls
 
 var callbacks = map[string]string{
-	"CONFIRMATION_URL":               "https://callmevincent.com/daraja/confirmation/",
-	"VALIDATION_URL":                 "https://callmevincent.com/daraja/validation/",
-	"B2C_RESULT_URL":                 "https://callmevincent.com/daraja/b2cnotifs/",
-	"B2C_TIMEOUT_URL":                "https://callmevincent.com/daraja/timeout/",
-	"B2B_RESULT_URL":                 "https://callmevincent.com/daraja/b2bnotifs/",
-	"B2B_TIMEOUT_URL":                "https://callmevincent.com/daraja/b2btimeout/",
-	"ACCOUNT_BALANCE_RESULT_URL":     "https://callmevincent.com/daraja/accountbalance/",
-	"ACCOUNT_BALANCE_TIMEOUT_URL":    "https://callmevincent.com/daraja/balancetimeout/",
-	"TRANSACTION_STATUS_RESULT_URL":  "https://callmevincent.com/daraja/",
-	"TRANSACTION_STATUS_TIMEOUT_URL": "https://callmevincent.com/daraja/",
-	"REVERSAL_RESULT_URL":            "https://callmevincent.com/daraja/reversal/",
-	"REVERSAL_TIMEOUT_URL":           "https://callmevincent.com/daraja/reversaltimeout/",
-	"MOBILE_CHECKOUT_URL":            "https://callmevincent.com/daraja/checkout/",
+	"CONFIRMATION_URL":               "",
+	"VALIDATION_URL":                 "",
+	"B2C_RESULT_URL":                 "",
+	"B2C_TIMEOUT_URL":                "",
+	"B2B_RESULT_URL":                 "",
+	"B2B_TIMEOUT_URL":                "",
+	"ACCOUNT_BALANCE_RESULT_URL":     "",
+	"ACCOUNT_BALANCE_TIMEOUT_URL":    "",
+	"TRANSACTION_STATUS_RESULT_URL":  "",
+	"TRANSACTION_STATUS_TIMEOUT_URL": "",
+	"REVERSAL_RESULT_URL":            "",
+	"REVERSAL_TIMEOUT_URL":           "",
+	"MOBILE_CHECKOUT_URL":            "",
 }
